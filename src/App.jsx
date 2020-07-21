@@ -28,12 +28,11 @@ function App() {
         {!doc && <div id="loading">Loading :)</div>}
         {doc && (
           <>
-            {JSON.stringify(doc)}
-            {/* <Header title={doc.title} subheading={doc.subheading} /> */}
+            <Header title={doc.title} subheading={doc.subheading} />
 
-            {/* {doc.body.map((section) => {
+            {doc.body.map((section) => {
               if (section.slice_type) return <Slice slice={section} />;
-            })} */}
+            })}
           </>
         )}
       </div>
