@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Prismic from "prismic-javascript";
 import "./App.css";
-import { Date, Link, RichText } from "prismic-reactjs";
 import Slice from "./components/Slice";
 import Header from "./components/Header";
 const apiEndpoint = "https://blog-smile.cdn.prismic.io/api/v2";
@@ -14,10 +13,8 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("Sending request...");
       const response = await Client.getSingle(`about_page`);
       setDocData(response.data);
-      console.log(response);
     };
     fetchData();
   }, []);
@@ -25,13 +22,14 @@ function App() {
   return (
     <div className="app">
       <div className="page">
-        {!doc && <div id="loading">Loading :)</div>}
+        {!doc && <div id="loading">LOADING...</div>}
         {doc && (
           <>
             <Header title={doc.title} subheading={doc.subheading} />
 
-            {doc.body.map((section) => {
-              if (section.slice_type) return <Slice slice={section} />;
+            {doc.body.map((section, index) => {
+              if (section.slice_type)
+                return <Slice key={index} slice={section} />;
             })}
           </>
         )}

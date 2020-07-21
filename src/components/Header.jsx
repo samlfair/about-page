@@ -3,7 +3,7 @@ import { RichText } from "prismic-reactjs";
 
 export default function Header({ title, subheading }) {
   return (
-    <div class="header">
+    <div className="header">
       {RichText.render(title)}
       {RichText.render(subheading)}
     </div>

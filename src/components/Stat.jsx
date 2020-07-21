@@ -14,14 +14,14 @@ const icons = {
 };
 
 export default function Stat({ data }) {
-  console.log(data);
-  console.log(data.icon);
+  let number = data.number;
+  if (data.icon !== "calendar") number = number.toLocaleString();
   return (
     <div className="stat-box">
       <div className="icon">
         <FontAwesomeIcon icon={icons[data.icon]} />
       </div>
-      <div className="number">{data.number}</div>
+      <div className="number">{number}</div>
       <div className="text">{RichText.render(data.description)}</div>
     </div>
   );

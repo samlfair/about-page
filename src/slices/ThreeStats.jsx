@@ -7,9 +7,9 @@ export default function ThreeStats({ data }) {
     <div className="stats">
       {RichText.render(data.primary.description)}
       <div className="stat-boxes">
-        {data.items.map((item, index) =>
-          index < 3 ? <Stat data={item} /> : null
-        )}
+        {data.items.map((item, index) => {
+          if (index < 3) return <Stat key={index} data={item} />;
+        })}
       </div>
     </div>
   );
