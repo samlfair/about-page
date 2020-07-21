@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="app">
       <div className="page">
-        {!doc && <div id="loading">Loading...</div>}
+        {!doc && <div id="loading">Loading :)</div>}
         {doc && (
           <>
             {JSON.stringify(doc)}
