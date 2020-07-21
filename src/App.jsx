@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Prismic from "prismic-javascript";
 import "./App.css";
 import { Date, Link, RichText } from "prismic-reactjs";
-import Slice from "./components/Slice";
-import Header from "./components/Header";
+// import Slice from "./components/Slice";
+// import Header from "./components/Header";
 const apiEndpoint = "https://blog-smile.cdn.prismic.io/api/v2";
 const accessToken = process.env.REACT_APP_PRISMIC_ACCESS_TOKEN;
 
@@ -26,7 +26,7 @@ function App() {
         {!doc && <div id="loading">Loading...</div>}
         {doc && (
           <>
-            <Header title={doc.title} subheading={doc.subheading} />
+            {/* <Header title={doc.title} subheading={doc.subheading} /> */}
 
             {doc.body.map((section) => {
               if (section.slice_type) return <Slice slice={section} />;
