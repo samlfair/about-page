@@ -14,8 +14,10 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log("Sending request...");
       const response = await Client.getSingle(`about_page`);
       setDocData(response.data);
+      console.log(response);
     };
     fetchData();
   }, []);
