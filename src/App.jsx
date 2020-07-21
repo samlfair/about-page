@@ -28,9 +28,9 @@ function App() {
           <>
             {/* <Header title={doc.title} subheading={doc.subheading} /> */}
 
-            {doc.body.map((section) => {
+            {/* {doc.body.map((section) => {
               if (section.slice_type) return <Slice slice={section} />;
-            })}
+            })} */}
           </>
         )}
       </div>
